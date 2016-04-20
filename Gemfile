@@ -16,7 +16,10 @@ gem 'bootstrap-sass'
 gem 'omniauth-facebook'
 gem 'figaro'
 gem 'omniauth-tumblr', '~> 1.2'
-
+gem 'faraday'
+gem 'faraday_middleware'
+gem 'excon'
+gem 'responders'
 
 
 group :development, :test do
