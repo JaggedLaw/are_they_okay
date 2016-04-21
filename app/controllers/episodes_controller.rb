@@ -1,8 +1,11 @@
 class EpisodesController < ApplicationController
 
-  respond_to :json
-
   def show
-    render json: ApiService.new.show_episode
+    render json: ApiService.new.grab_show(params)
   end
+
+  def related_episodes
+    render json: ApiService.new.grab_related_episodes(params)
+  end
+
 end
