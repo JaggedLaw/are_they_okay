@@ -18,8 +18,12 @@ class ApiService
     client.get_show(params[:id])
   end
 
+  def self.grab_show(params)
+    new.grab_show(params)
+  end
+
   def grab_related_episodes(tags)
-    res = client.search({ q: 'mental illness' })
+    res = client.search({ q: 'bipolar'})
     if !res.is_success
       raise "There was a problem searching: #{res.status} #{res}"
     end
