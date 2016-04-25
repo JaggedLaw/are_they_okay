@@ -2,7 +2,7 @@
   <ul class="nav nav-tabs">
     <li><%= link_to "Home", root_path %></li>
     <li><%= link_to "Login", tumblr_login_path %></li>
-    <li><%= link_to "Survey", surveys_path %></li>
+    <li><%= link_to "Survey", survey_path(Question.first.id) %></li>
   </ul>
 </div>
 
