@@ -1,19 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe EpisodesController, type: :controller do
-
-  describe "GET #show" do
-    it "returns http success" do
-      get :show
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-end
-
 RSpec.feature "GuestCanCreateAccount", type: :feature do
   scenario "user logs in through tumblr oauth and initiates session" do
-
+    binding.pry
     visit root_path
     expect(Session.count).to eq 0
     click_on "Login"

@@ -26,6 +26,7 @@ group :development, :test do
   gem 'byebug'
   gem 'pry', :require => 'pry'
   gem 'rspec-rails', '~> 3.0'
+  gem 'capybara'
 end
 
 group :development do
@@ -36,4 +37,5 @@ end
 group :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'simplecov', require: false
+  gem 'database_cleaner'
 end
