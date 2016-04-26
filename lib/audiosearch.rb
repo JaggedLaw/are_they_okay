@@ -54,13 +54,14 @@ module Audiosearch
       @pw                  = args[:password]
       @oauth_id            = args[:id]
       @oauth_secret        = args[:secret]
-      @oauth_redir_uri     = args[:redir_uri] || 'urn:ietf:wg:oauth:2.0:oob'
-      @host                = args[:host] || 'https://www.audiosear.ch'
+      @oauth_redir_uri     = args[:redir_uri] || "urn:ietf:wg:oauth:2.0:oob"
+      @host                = args[:host] || "https://www.audiosear.ch"
       @debug               = args[:debug]
-      @user_agent          = args[:user_agent] || 'audiosearch-ruby-client/'+version()
+      @user_agent          = args[:user_agent] || "audiosearch-ruby-client/"+version()
       @api_endpoint        = args[:api_endpoint] || '/api'
       @croak_on_404        = args[:croak_on_404] || false
 
+      binding.pry
       # normalize host
       @host.gsub!(/\/$/, '')
 

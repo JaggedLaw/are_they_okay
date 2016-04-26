@@ -1,6 +1,6 @@
-class ApiService
+require 'audiosearch'
 
-  require 'audiosearch'
+class ApiService
 
   attr_reader :client
 

@@ -13,14 +13,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # my additions:
 gem 'bootstrap-sass'
-gem 'omniauth-facebook'
 gem 'figaro'
 gem 'omniauth-tumblr', '~> 1.2'
 gem 'faraday'
 gem 'faraday_middleware'
 gem 'excon'
 gem 'responders'
-
+gem 'oauth2'
 
 group :development, :test do
   gem 'byebug'
