@@ -7,9 +7,9 @@ class ApiService
   # create a client
   def initialize
     @client ||= Audiosearch::Client.new(
-      :id     => ENV["CLIENT_ID"].dup,
-      :secret => ENV["CLIENT_SECRET"].dup,
-      :host   => ENV["AS_HOST"].dup,
+      :id     => ENV['CLIENT_ID'].dup,
+      :secret => ENV['CLIENT_SECRET'].dup,
+      :host   => ENV['AS_HOST'].dup,
       :debug  => false,
     )
   end
