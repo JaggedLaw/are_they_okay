@@ -9,7 +9,7 @@ class ApiService
     @client ||= Audiosearch::Client.new(
       :id     => ENV["CLIENT_ID"],
       :secret => ENV["CLIENT_SECRET"],
-      :host   => 'https://www.audiosear.ch/',
+      :host   => ENV["AS_HOST"],
       :debug  => false,
     )
   end
