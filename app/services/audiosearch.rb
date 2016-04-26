@@ -61,7 +61,6 @@ module Audiosearch
       @api_endpoint        = args[:api_endpoint] || '/api'
       @croak_on_404        = args[:croak_on_404] || false
 
-      binding.pry
       # normalize host
       @host.gsub!(/\/$/, '')
 
@@ -96,6 +95,7 @@ module Audiosearch
         faraday.adapter  :excon
       end
 
+      p client
       token = nil
       if @un && @pw
         # TODO 3-legged oauth to @authorize_url
