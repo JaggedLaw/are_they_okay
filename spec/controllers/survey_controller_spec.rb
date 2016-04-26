@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe SurveyController, type: :controller do
+RSpec.describe SurveysController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do

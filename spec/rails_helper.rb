@@ -10,6 +10,20 @@ require 'shoulda/matchers'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+
+  # VCR.configure do |config|
+  #   config.casset_library_dir = 'spec/vcr'
+  #   config.hook_into :webmock
+  # end
+
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:tumblr] = OmniAuth::AuthHash.new(
+  {
+    info: {
+      name: "tumblr_name"
+    }
+  })
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

@@ -25,73 +25,86 @@
         1,
         null
       ],
-      "/Users/charissalawrence/Documents/Turing/Module3_pt2/are_they_okay/app/controllers/answers_controller.rb": [
+      "/Users/charissalawrence/Documents/Turing/Module3_pt2/are_they_okay/app/models/user.rb": [
+        1,
         1,
         1,
         null,
-        null,
         1,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        null,
         null,
         null
+      ],
+      "/Users/charissalawrence/Documents/Turing/Module3_pt2/are_they_okay/app/controllers/answers_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
       "/Users/charissalawrence/Documents/Turing/Module3_pt2/are_they_okay/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
         0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
       "/Users/charissalawrence/Documents/Turing/Module3_pt2/are_they_okay/app/controllers/episodes_controller.rb": [
-        1,
-        null,
-        1,
         0,
-        null,
-        null,
-        1,
         0,
-        null,
-        null,
-        null,
-        null,
-        null
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
       "/Users/charissalawrence/Documents/Turing/Module3_pt2/are_they_okay/app/controllers/home_controller.rb": [
-        1,
-        1,
-        null,
-        null
+        0,
+        0,
+        0,
+        0
       ],
       "/Users/charissalawrence/Documents/Turing/Module3_pt2/are_they_okay/app/controllers/sessions_controller.rb": [
-        1,
-        1,
         0,
         0,
         0,
         0,
-        null,
-        0,
-        null,
-        null,
-        null,
-        1,
         0,
         0,
-        null,
-        null
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
       "/Users/charissalawrence/Documents/Turing/Module3_pt2/are_they_okay/app/controllers/surveys_controller.rb": [
         0,
@@ -133,19 +146,6 @@
         0
       ],
       "/Users/charissalawrence/Documents/Turing/Module3_pt2/are_they_okay/app/models/symptom.rb": [
-        0,
-        0,
-        0
-      ],
-      "/Users/charissalawrence/Documents/Turing/Module3_pt2/are_they_okay/app/models/user.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         0,
         0,
         0
@@ -459,6 +459,6 @@
         0
       ]
     },
-    "timestamp": 1461625823
+    "timestamp": 1461632065
   }
 }
