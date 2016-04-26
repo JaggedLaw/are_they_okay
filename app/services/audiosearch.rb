@@ -95,7 +95,6 @@ module Audiosearch
         faraday.adapter  :excon
       end
 
-      p client
       token = nil
       if @un && @pw
         # TODO 3-legged oauth to @authorize_url
