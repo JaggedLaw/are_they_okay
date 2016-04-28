@@ -19,5 +19,6 @@
 
   resources :answers, only: [:new, :create]
 
+  resources :results, only: [:index]
 
 end
