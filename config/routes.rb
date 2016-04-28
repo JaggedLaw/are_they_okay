@@ -7,7 +7,9 @@
   get "/auth/tumblr", as: "tumblr_login"
   get "/auth/tumblr/callback", to: "sessions#create"
 
-  resources :episodes, only: [:show] do
+  delete '/logout', to: "sessions#destroy"
+
+  resources :episodes do
     collection do
       get "/related", to: "episodes#related_episodes"
     end

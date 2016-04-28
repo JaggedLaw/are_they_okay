@@ -6,10 +6,13 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'shoulda/matchers'
+require 'factory_girl_rails'
 
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+
+  config.include FactoryGirl::Syntax::Methods
 
   # VCR.configure do |config|
   #   config.casset_library_dir = 'spec/vcr'
@@ -23,6 +26,10 @@ RSpec.configure do |config|
       name: "tumblr_name"
     }
   })
+
+def stub_current_user
+  ApplicationController.any_instance.stub(:current_user)
+end
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

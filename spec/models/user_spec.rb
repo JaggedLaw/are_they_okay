@@ -12,8 +12,7 @@ RSpec.describe User, type: :model do
   end
 
   it "can create or find a user from auth_info" do
-    User.find_or_create_by_auth(auth_info)
-    user = User.last
+    user = User.find_or_create_by_auth(auth_info)
 
     assert_equal 'tumblr_name', user.name
   end

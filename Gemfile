@@ -26,6 +26,9 @@ group :development, :test do
   gem 'pry', :require => 'pry'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
+  gem 'faker'
+  gem 'factory_girl_rails', :require => false
+  gem 'launchy'
 end
 
 group :development do
