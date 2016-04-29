@@ -1,0 +1,10 @@
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to "Login", tumblr_login_path %></li>
+    <li><%= link_to "Survey", survey_path(Question.first.id) %></li>
+    <li><%= link_to "Logout", logout_path, method: :delete %></li>
+    <li><%= link_to "View Results", results_path %></li>
+
+  </ul>
+</div>

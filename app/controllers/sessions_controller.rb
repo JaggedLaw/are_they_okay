@@ -12,5 +12,6 @@ class SessionsController < ApplicationController
   def destroy
     current_user.answers.delete_all
     session.clear
+    redirect_to root_path
   end
 end

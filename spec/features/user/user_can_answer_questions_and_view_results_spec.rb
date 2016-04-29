@@ -23,12 +23,13 @@ RSpec.feature "GuestCanCreateAccount", type: :feature do
     expect(Answer.last.answer).to eq "No"
     expect(current_path).to eq survey_path(first_ques_id + 2)
     choose 'answer_answer_yes'
-    click_on 'Submit'
-    expect(Answer.last.answer).to eq "Yes"
+    expect(page).to have_text("View Results")
+    click_on 'View Results'
 
     expect(current_path).to eq results_path
 
     expect(page).to have_text("The following is an assessment based on your answers:")
+    expect(page).to have_text("Your answers point to the possiblility of the following illness:")
 
 
     # expect(page).to have_text("Enter Your Zip Code To View Nearby Mental Health Resources")

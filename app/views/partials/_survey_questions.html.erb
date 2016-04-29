@@ -10,7 +10,7 @@
             </div>
 
           <%= form_for @answers do |f| %>
-          <%= f.hidden_field :counter, :value => @question.id %>
+          <%= f.hidden_field :question_id, :value => @question.id %>
           <div class="panel-body two-col">
                 <div class="row">
                     <div class="col-md-6">
@@ -46,8 +46,11 @@
                 <div class="row">
                     <div class="col-md-6">
                         <button type="button" class="btn btn-success btn-sm btn-block">
-                          <%= f.submit "Submit", class:"fa fa-send" %>
+                          <%= f.submit "Submit" %>
                         <% end %>
+                    </div>
+                    <div class="col-md-6">
+                        <%= button_to "View Results", results_path, :method => "get" %>
                     </div>
                 </div>
             </div>
