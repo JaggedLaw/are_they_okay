@@ -18,13 +18,13 @@ RSpec.feature "GuestCanCreateAccount", type: :feature do
     receive(:current_user).and_return(user))
 
     expect(user.name).to eq "tumblr_name"
-    create(:question)
-    create(:question)
+    ques1 = create(:question)
+    ques2 = create(:question)
     visit root_path
     click_on "Survey"
     choose 'answer_answer_yes'
     click_on 'Submit'
-    expect(user.answers.last.id).to eq 1
+    expect(user.answers.last.question.question).to eq ques1.question
     click_on "Logout"
     expect(current_path).to eq root_path
     expect(user.answers).to be_empty

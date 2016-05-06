@@ -1,7 +1,7 @@
 class ResultsController < ApplicationController
 
   def index
-    @illnesses = Answer.find_illnesses
+    @illnesses = Illness.find_illnesses
   end
 
 end

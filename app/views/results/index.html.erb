@@ -13,3 +13,14 @@
         </div>
     </div>
 </div>
+
+<body>
+  <div class=""col-md-6" id="panel1">
+    <span class="fa fa-question-circle"></span> Your answers point to the possiblility of the following illness: </h3>
+    <% @illnesses.each do |illness| %>
+      <ul>
+        <li> <%= Illness.find(illness[0]).name.capitalize  %> Score: <%= illness[1] %></li>
+      </ul>
+    <% end %>
+  </div>
+</body>
