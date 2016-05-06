@@ -6,7 +6,7 @@ namespace :import do
     task import_csv: :environment do
 
       counter = 0
-      filename = "lib/tasks/illnesses.csv"
+      filename = "lib/tasks/csv/illnesses.csv"
       CSV.foreach(filename, :headers => true) do |row|
         id, name = row
         Illness.create!(row.to_h)
@@ -15,7 +15,7 @@ namespace :import do
       puts "Imported #{counter} disorders"
 
       counter = 0
-      filename = "lib/tasks/illness_questions.csv"
+      filename = "lib/tasks/csv/illness_questions.csv"
       CSV.foreach(filename, :headers => true) do |row|
         illness_id, question_id, weight = row
         IllnessQuestion.create!(row.to_h)
