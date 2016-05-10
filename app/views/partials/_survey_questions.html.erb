@@ -46,9 +46,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <button type="button" class="btn btn-success btn-sm btn-block">
+                        <% if current_user %>
                           <%= f.submit "Submit" %>
+                        <% else %>
+                          <%= button_to "Submit", login_path, :method => "get" %>
                         <% end %>
                     </div>
+          <% end %>
                     <div class="col-md-6" id="results">
                         <%= button_to "View Results", results_path, :method => "get" %>
                     </div>
