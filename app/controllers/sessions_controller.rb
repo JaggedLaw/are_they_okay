@@ -1,9 +1,17 @@
 class SessionsController < ApplicationController
   def create
-    user = User.find_or_create_by_auth(request.env["omniauth.auth"])
+    if request.env["omniauth.auth"]
+      user = User.find_or_create_by_auth(request.env["omniauth.auth"])
+    else
+      user = User.create_guest
+    end
     if user
       session[:user_id] = user.id
-      redirect_to root_path
+      if params[:survey_flag]
+        redirect_to survey_path(1)
+      else
+        redirect_to root_path
+      end
     else
       redirect_to root_path
     end

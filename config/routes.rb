@@ -7,7 +7,8 @@
   get "/auth/tumblr", as: "tumblr_login"
   get "/auth/tumblr/callback", to: "sessions#create"
 
-  get '/login', to: "sessions#create"
+  post '/sessions/create', to: "sessions#create"
+  post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
 
   resources :episodes do

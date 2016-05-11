@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
     user
   end
 
+  def self.create_guest
+    user = User.create(name: "Guest")
+  end
+
 end

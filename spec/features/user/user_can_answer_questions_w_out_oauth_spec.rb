@@ -23,11 +23,14 @@ RSpec.feature "GuestDoesntLogin", type: :feature do
     click_on "Survey"
     choose 'answer_answer_yes'
     click_on 'Submit'
-    expect(current_path).to eq login_path
-    expect(page).to have_text("Please enter a username and email, or click 'Continue' to continue without an account")
-    fill_in 'Username', with: 'NewGuy'
-    click_on 'Resume Survey'
+    expect(page).to have_content "Would you like to sign in through your Tumblr account or continue as a guest?"
+    within "#modal-continue" do
+      click_on "Continue as Guest"
+    end
+    expect(User.last.name).to eq "Guest"
+
     expect(current_path).to eq survey_path(question1.id)
+    choose 'answer_answer_yes'
     click_on 'Submit'
     expect(Answer.first.answer).to eq "Yes"
     expect(current_path).to eq survey_path(question2.id)
@@ -46,10 +49,8 @@ RSpec.feature "GuestDoesntLogin", type: :feature do
 
     expect(page).to have_text("The following is an assessment based on your answers:")
     expect(page).to have_text("Your answers point to the possiblility of the following illness:")
-    save_and_open_page
     expect(page).to have_text("Depression")
     expect(page).to have_text("Schizophrenia")
-
 
   end
 end
