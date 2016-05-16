@@ -22,13 +22,17 @@ class ApiService
     new.grab_show(params)
   end
 
-  def grab_related_episodes(tags)
-    res = client.search({ q: 'bipolar'})
-    if !res.is_success
-      raise "There was a problem searching: #{res.status} #{res}"
-    end
-    res.results.each do |episode|
-      printf("[%s] %s (%s)\n", episode.id, episode.title, episode.show_title)
+  def grab_related_episodes(params)
+    disorders = params[:illnesses]
+    disorders.each do |disorder|
+      disorder_name = Illness.find(disorder[0]).name
+      res = client.search({ q: 'disorder_name'})
+      if !res.is_success
+        raise "There was a problem searching: #{res.status} #{res}"
+      end
+      res.results.each do |episode|
+        printf("[%s] %s (%s)\n", episode.id, episode.title, episode.show_title)
+      end
     end
   end
 

@@ -16,7 +16,7 @@ RSpec.feature "GuestCanCreateAccount", type: :feature do
       i += 1
       questions << Question.create(question: "#{i}do you like questions")
       Illness.create(user_id: user.id, name: "#{i}illness")
-      IllnessQuestion.create(question_id: i, illness_id: i, weight: 3 + i)
+      IllnessQuestion.create(question_id: questions.last.id, illness_id: i, weight: 3 + i)
     end
     first_ques_id = questions.first.id
     visit root_path
@@ -87,7 +87,6 @@ RSpec.feature "GuestCanCreateAccount", type: :feature do
 
     expect(page).to have_text("The following is an assessment based on your answers:")
     expect(page).to have_text("Your answers point to the possiblility of the following illness:")
-    save_and_open_page
     expect(page).to have_text("Depression")
     expect(page).to have_text("Schizophrenia")
 

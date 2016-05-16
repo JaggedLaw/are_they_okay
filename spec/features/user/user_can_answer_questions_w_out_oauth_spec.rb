@@ -8,10 +8,10 @@ RSpec.feature "GuestDoesntLogin", type: :feature do
     illness2 = Illness.create(name: "schizophrenia")
     illness3 = Illness.create(name: "bipolar")
 
-    question1 = Question.create(question: "Are you depressed")
-    question2 = Question.create(question: "Are you really depressed")
-    question3 = Question.create(question: "Are you schizophrenic")
-    question4 = Question.create(question: "Are you bipolar")
+    question1 = Question.create(id: 1, question: "Are you depressed")
+    question2 = Question.create(id: 2, question: "Are you really depressed")
+    question3 = Question.create(id: 3, question: "Are you schizophrenic")
+    question4 = Question.create(id: 4, question: "Are you bipolar")
 
     IllnessQuestion.create(illness_id: illness1.id, question_id: question1.id, weight: 4)
     IllnessQuestion.create(illness_id: illness1.id, question_id: question2.id, weight: 5)

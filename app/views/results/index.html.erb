@@ -17,12 +17,14 @@
 </div>
 
 <body>
-  <div class=""col-md-6" id="panel1">
-    <span class="fa fa-question-circle"></span> Your answers point to the possiblility of the following illness: </h3>
+    Your answers point to the possiblility of the following illness:
     <% @illnesses.each do |illness| %>
       <ul>
-        <li> <%= Illness.find(illness[0]).name.capitalize  %> Score: <%= illness[1] %></li>
+        <li><%= Illness.find(illness[0]).name.capitalize  %> Score: <%= illness[1] %></li>
       </ul>
     <% end %>
-  </div>
+
+    Click here to view podcasts related to your results
+    <%= link_to  "Related Podcasts", {:controller => "episodes", :action => "related_episodes", :illnesses => @illnesses}, class: "btn btn-default" %>
+
 </body>
