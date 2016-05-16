@@ -154,6 +154,10 @@
         1,
         null,
         null,
+        1,
+        0,
+        null,
+        null,
         null
       ],
       "/Users/charissalawrence/Documents/Turing/Module3_pt2/are_they_okay/app/services/api_service.rb": [
@@ -182,6 +186,21 @@
         null,
         null,
         1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
         1,
         1,
         2,
@@ -190,10 +209,10 @@
         0,
         null,
         2,
-        0,
+        20,
         null,
         null,
-        null,
+        1,
         null,
         null,
         null
@@ -493,6 +512,6 @@
         0
       ]
     },
-    "timestamp": 1463362706
+    "timestamp": 1463370872
   }
 }

@@ -13,6 +13,7 @@
 
   resources :episodes do
     collection do
+      resources :episodes, only: [:index]
       get "/related", to: "episodes#related_episodes"
     end
   end

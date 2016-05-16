@@ -8,7 +8,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">
-                    <span class="fa fa-question-circle"></span> The following is an assessment based on your answers: </h3>
+                    <span class="fa fa-question-circle"></span> Here are some podcasts: </h3>
             </div>
 
 
@@ -18,13 +18,10 @@
 
 <body>
     Your answers point to the possiblility of the following illness:
-    <% @illnesses.each do |illness| %>
+    <% @episodes.each do |episode| %>
       <ul>
-        <li><%= Illness.find(illness[0]).name.capitalize  %> Score: <%= illness[1] %></li>
+        Episode <%=  episode[0]%>: Title: <%= episode[1] %> (from show  <%= episode[2] %>)
       </ul>
     <% end %>
-
-    Click here to view podcasts related to your results
-    <%= link_to  "Related Podcasts", episodes_path( :illnesses => @illnesses), class: "btn btn-default" %>
 
 </body>
