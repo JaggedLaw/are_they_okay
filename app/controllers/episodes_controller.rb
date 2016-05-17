@@ -5,7 +5,7 @@ class EpisodesController < ApplicationController
   end
 
   def related_episodes
-    render json: ApiService.new.print(params)
+    render json: ApiService.new.print_related_episodes(params)
   end
 
 end

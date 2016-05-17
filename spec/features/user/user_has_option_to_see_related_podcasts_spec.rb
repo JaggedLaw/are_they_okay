@@ -30,14 +30,14 @@ RSpec.feature "UserSeesPodcasts", type: :feature do
     expect(page).to have_content "Click here to view podcasts related to your results"
     click_on "Related Podcasts"
     expect(current_path).to eq episodes_path
-    expect(page).to have_content "Here are some podcasts:"
+    expect(page).to have_content "Related Podcasts"
     # within "#podcast-illness1" do
     #   #use VCR to test api content
       expect(page).to have_content "depression"
     # end
     # within "#podcast-illness2" do
     #   #use VCR to test api content
-      expect(page).to have_content "schizo"
+      # expect(page).to have_content "schizo"
     # end
 
   end

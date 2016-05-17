@@ -47,7 +47,7 @@ RSpec.feature "GuestDoesntLogin", type: :feature do
     end
     expect(current_path).to eq results_path
 
-    expect(page).to have_text("The following is an assessment based on your answers:")
+    expect(page).to have_text("The following is an assessment based on your answers")
     expect(page).to have_text("Your answers point to the possiblility of the following illness:")
     expect(page).to have_text("Depression")
     expect(page).to have_text("Schizophrenia")
