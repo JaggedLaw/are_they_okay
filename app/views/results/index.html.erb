@@ -1,30 +1,29 @@
 <%= render "partials/navbar" %>
 
-<div class="container" id="cnt1">
-    <div class="col-md-3">
-    </div>
-
-    <div class="col-md-6" id="panel1">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">
-                    <span class="fa fa-question-circle"></span> The following is an assessment based on your answers: </h3>
-            </div>
-
-
-        </div>
-    </div>
+<div class="page-mast-header">
+  <div class="container">
+    <h1>Survey Results</h1>
+    <p>
+      The following is an assessment based on your answers
+    </p>
+  </div>
 </div>
 
-<body>
-    Your answers point to the possiblility of the following illness:
-    <% @illnesses.each do |illness| %>
-      <ul>
-        <li><%= Illness.find(illness[0]).name.capitalize  %> Score: <%= illness[1] %></li>
-      </ul>
-    <% end %>
+<div class="container">
 
-    Click here to view podcasts related to your results
-    <%= link_to  "Related Podcasts", episodes_path( :illnesses => @illnesses), class: "btn btn-default" %>
+      <div class="row">
+      <div class="col-md-12">
 
-</body>
+      <h2>Your answers point to the possiblility of the following illness:</h2>
+      <% @illnesses.each do |illness| %>
+        <ul>
+          <h4><%= Illness.find(illness[0]).name.capitalize  %></h4> <span class="score-text">Score: <%= illness[1] %></span>
+        </ul>
+      <% end %>
+
+      Click here to view podcasts related to your results
+      <%= link_to  "Related Podcasts", episodes_path( :illnesses => @illnesses), class: "btn btn-default" %>
+    </div>
+  </div>
+
+</div>

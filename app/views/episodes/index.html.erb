@@ -1,27 +1,27 @@
 <%= render "partials/navbar" %>
 
-<div class="container" id="cnt1">
-    <div class="col-md-3">
-    </div>
+<div class="page-mast-header">
+  <div class="container">
+    <h1>Related Podcasts</h1>
+    <p>
+      Remember you are not alone. Mental Health is a common issue that affects everyone. The good news is that it is treatable. Click below to listen to podcasts from people who have dealt with the issues that you are facing.
+    </p>
 
-    <div class="col-md-6" id="panel1">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">
-                    <span class="fa fa-question-circle"></span> Here are some podcasts: </h3>
-            </div>
-
-
-        </div>
-    </div>
+  </div>
 </div>
 
-<body>
-    Your answers point to the possiblility of the following illness:
+<div class="container">
+
+      <div class="row">
+      <div class="col-md-12">
+
     <% @episodes.each do |episode| %>
       <ul>
-        Episode <%=  episode[0]%>: Title: <%= episode[1] %> (from show  <%= episode[2] %>)
+        Episode <%=  episode[0]%>: &nbsp<b><h4 style="display:inline-block"><%= episode[1] %></h4></b> &nbsp&nbsp(from show  <b><%= episode[2] %></b>)
       </ul>
     <% end %>
 
-</body>
+  </div>
+</div>
+
+</div>
