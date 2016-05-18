@@ -55,7 +55,12 @@
                         <% if current_user %>
                           <%= f.submit "Submit", class: "btn btn-success btn-sm btn-block" %>
                         <% else %>
-                        <%= link_to "Submit", "#myModal", class: "btn btn-success btn-sm btn-block", "data-toggle" => "modal" %>
+                        <%= link_to "Submit", "#myModal", class: "btn btn-success btn-sm btn-block", "data-toggle" => "modal" , "data-backdrop" => "false" %>
+                          <!-- <button type="button" class="btn btn-success btn-sm btn-block">
+                          <a data-backdrop="false" data-toggle="modal" data-target="#myModal">
+                            Submit
+                          </a>
+                        </button> -->
                         <% end %>
                     </div>
           <% end %>
@@ -66,6 +71,7 @@
             </div>
         </div>
     </div>
+
     <div class="modal fade" id="myModal">
       <div class="modal-dialog">
         <div class="modal-content">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160428043944) do
+ActiveRecord::Schema.define(version: 20160518002226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,12 @@ ActiveRecord::Schema.define(version: 20160428043944) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "symptoms", force: :cascade do |t|
     t.integer  "illness_id"
     t.string   "name"
@@ -61,6 +67,16 @@ ActiveRecord::Schema.define(version: 20160428043944) do
   end
 
   add_index "symptoms", ["illness_id"], name: "index_symptoms_on_illness_id", using: :btree
+
+  create_table "user_roles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_roles", ["role_id"], name: "index_user_roles_on_role_id", using: :btree
+  add_index "user_roles", ["user_id"], name: "index_user_roles_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -75,4 +91,6 @@ ActiveRecord::Schema.define(version: 20160428043944) do
   add_foreign_key "illness_questions", "questions"
   add_foreign_key "illnesses", "users"
   add_foreign_key "symptoms", "illnesses"
+  add_foreign_key "user_roles", "roles"
+  add_foreign_key "user_roles", "users"
 end

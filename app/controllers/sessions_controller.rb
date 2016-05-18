@@ -2,8 +2,10 @@ class SessionsController < ApplicationController
   def create
     if request.env["omniauth.auth"]
       user = User.find_or_create_by_auth(request.env["omniauth.auth"])
+      user.roles << Role.find_by(name: "session_guest")
     else
       user = User.create_guest
+      user.roles << Role.find_by(name: "session_guest")
     end
     if user
       session[:user_id] = user.id
