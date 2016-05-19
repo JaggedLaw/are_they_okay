@@ -54,4 +54,4 @@ RSpec.feature "GuestDoesntLogin", type: :feature do
     expect(page).to have_text("Schizophrenia")
 
   end
-endgit 
+end
