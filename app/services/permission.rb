@@ -35,12 +35,13 @@ class Permission
     end
 
     def session_guest_permissions
+      return true if controller == 'results' && action.in?(%w(index))
       return true if controller == 'surveys' && action.in?(%w(show))
       return true if controller == 'home' && action.in?(%w(index))
-      return true if controller == 'results' && action.in?(%w(index))
     end
 
     def general_permissions
+      return true if controller == 'sessions' && action.in?(%w(create))
       return true if controller == 'surveys' && action.in?(%w(show))
       return true if controller == 'home' && action.in?(%w(index))
     end

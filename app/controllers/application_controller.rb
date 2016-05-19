@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
   def authorize!
     unless authorized?
-      flash[:alert] = "Nothing to view"
+      flash["alert-info"] = "You don't have access to view that content"
       redirect_to root_path
     end
   end
