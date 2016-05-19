@@ -55,12 +55,7 @@
                         <% if current_user %>
                           <%= f.submit "Submit", class: "btn btn-success btn-sm btn-block" %>
                         <% else %>
-                        <%= link_to "Submit", "#myModal", class: "btn btn-success btn-sm btn-block", "data-toggle" => "modal" , "data-backdrop" => "false" %>
-                          <!-- <button type="button" class="btn btn-success btn-sm btn-block">
-                          <a data-backdrop="false" data-toggle="modal" data-target="#myModal">
-                            Submit
-                          </a>
-                        </button> -->
+                          <%= link_to "Submit", "#myModal", class: "btn btn-success btn-sm btn-block", "data-toggle" => "modal" , "data-backdrop" => "false" %>
                         <% end %>
                     </div>
           <% end %>
@@ -73,25 +68,7 @@
     </div>
 
     <div class="modal fade" id="myModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <h3 class="panel-title">
-              Would you like to sign in through your Tumblr account or continue as a guest?
-            </h3>
-          </div>
-          <div class="modal-footer" id="modal-continue">
-            <%= button_to "Login with Tumblr", tumblr_login_path, class: "btn btn-default" %>
-            <%= button_to "Continue as Guest", {:controller => "sessions", :action => "create", :survey_flag => true}, class: "btn btn-default" %>
-          </div>
-
-        </div>
-      </div>
+      <%= render "partials/login_modal" %>
     </div>
 
     <script>
@@ -101,4 +78,5 @@
         }
       });
     </script>
+
 </div>

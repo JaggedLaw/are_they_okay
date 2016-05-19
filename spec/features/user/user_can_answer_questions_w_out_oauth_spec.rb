@@ -25,9 +25,9 @@ RSpec.feature "GuestDoesntLogin", type: :feature do
     choose 'answer_answer_yes'
     click_on 'Submit'
     expect(page).to have_content "Would you like to sign in through your Tumblr account or continue as a guest?"
-    within "#modal-continue" do
-      click_on "Continue as Guest"
-    end
+    # within "#modal-continue" do
+      click_on("Continue as Guest", match: :first)
+    # end
     expect(User.last.name).to eq "Guest"
 
     expect(current_path).to eq survey_path(question1.id)

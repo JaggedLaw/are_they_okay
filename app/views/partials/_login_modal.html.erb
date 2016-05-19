@@ -1,0 +1,19 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <h3 class="panel-title">
+        Would you like to sign in through your Tumblr account or continue as a guest?
+      </h3>
+    </div>
+    <div class="modal-footer" id="modal-continue">
+      <%= button_to "Login with Tumblr", tumblr_login_path, class: "btn btn-default" %>
+      <%= button_to "Continue as Guest", {:controller => "sessions", :action => "create", :survey_flag => true}, class: "btn btn-default" %>
+    </div>
+
+  </div>
+</div>

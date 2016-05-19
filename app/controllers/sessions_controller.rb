@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
   def create
     if request.env["omniauth.auth"]
       user = User.find_or_create_by_auth(request.env["omniauth.auth"])
-      binding.pry
       user.roles << Role.find_by(name: "session_guest")
     else
       user = User.create_guest
@@ -22,6 +21,7 @@ class SessionsController < ApplicationController
 
   def destroy
     current_user.answers.delete_all
+    Answer.all.delete_all
     session.clear
     redirect_to root_path
   end
