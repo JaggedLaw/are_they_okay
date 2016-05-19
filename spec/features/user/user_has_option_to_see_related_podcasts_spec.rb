@@ -7,6 +7,8 @@ RSpec.feature "UserSeesPodcasts", type: :feature do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to(
     receive(:current_user).and_return(user))
+    create(:session_guest_role)
+    user.roles << Role.find_by(name: "session_guest")
 
     illness1 = Illness.create(name: "depression")
     illness2 = Illness.create(name: "schizophrenia")

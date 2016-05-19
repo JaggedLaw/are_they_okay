@@ -14,4 +14,12 @@ FactoryGirl.define do
     answer "Yes"
   end
 
+  factory :role do
+    name "any_role"
+  end
+
+  factory :session_guest_role, parent: :role do
+    name "session_guest"
+  end
+
 end

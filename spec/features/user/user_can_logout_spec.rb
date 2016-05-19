@@ -16,6 +16,8 @@ RSpec.feature "GuestCanCreateAccount", type: :feature do
     user = User.find_or_create_by_auth(auth_info)
     allow_any_instance_of(ApplicationController).to(
     receive(:current_user).and_return(user))
+    create(:session_guest_role)
+    user.roles << Role.find_by(name: "session_guest")
 
     expect(user.name).to eq "tumblr_name"
     ques1 = create(:question)

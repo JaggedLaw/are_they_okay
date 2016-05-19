@@ -19,6 +19,7 @@ RSpec.feature "GuestDoesntLogin", type: :feature do
     IllnessQuestion.create(illness_id: illness3.id, question_id: question4.id, weight: 4)
 
     visit root_path
+    create(:session_guest_role)
 
     click_on "Survey"
     choose 'answer_answer_yes'
@@ -53,4 +54,4 @@ RSpec.feature "GuestDoesntLogin", type: :feature do
     expect(page).to have_text("Schizophrenia")
 
   end
-end
+endgit 
