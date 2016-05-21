@@ -41,8 +41,8 @@ class ApiService
       if !res.is_success
         raise "There was a problem searching: #{res.status} #{res}"
       end
-      res.results.each do |episode|
-        episode_results << [episode.id, episode.title, episode.show_title]
+      res.results.first(8).each do |episode|
+        episode_results << [disorder_name, episode.id, episode.title, episode.show_title]
       end
     end
     return episode_results

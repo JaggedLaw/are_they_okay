@@ -11,13 +11,12 @@
 </div>
 
 <div class="container">
-
-      <div class="row">
+      <div class="row" >
       <div class="col-md-12">
 
     <% @episodes.each do |episode| %>
-      <ul>
-        Episode <%=  episode[0]%>: &nbsp<b><h4 style="display:inline-block"><%= episode[1] %></h4></b> &nbsp&nbsp(from show  <b><%= episode[2] %></b>)
+      <ul id="row-<%="#{episode[0]}"%>">
+        Disorder: &nbsp<%=  episode[0]%>-- Episode <%=  episode[1]%>: &nbsp<b><h4 style="display:inline-block"><%= episode[2] %></h4></b> &nbsp&nbsp(from show  <b><%= episode[3] %></b>)
       </ul>
     <% end %>
 
