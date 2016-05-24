@@ -1,1 +1,21 @@
-<%= @episode %>
+<%= render "partials/navbar" %>
+
+<div class="page-mast-header">
+  <div class="container">
+    <h1>Related Podcasts</h1>
+    <p>
+      Remember you are not alone. Mental Health is a common issue that affects everyone. The good news is that it is treatable. Click below to listen to podcasts from people who have dealt with the issues that you are facing.
+    </p>
+
+  </div>
+</div>
+
+<div class="container">
+      <div class="row" >
+      <div class="col-md-12">
+        <%= link_to "listen to podcast", @episode_link, class: "btn btn-info btn-sm btn-block" %>
+
+</div>
+</div>
+
+</div>

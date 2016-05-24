@@ -1,5 +1,3 @@
-# require 'audiosearch'
-
 class ApiService
 
   attr_reader :client
@@ -15,8 +13,7 @@ class ApiService
   end
 
   def grab_episode(params)
-    resp = client.get_episode(params[:id])
-    binding.pry
+    client.get_episode(params[:id])
   end
 
   def print_related_episodes(params)

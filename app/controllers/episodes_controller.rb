@@ -10,5 +10,6 @@ class EpisodesController < ApplicationController
 
   def show
     @episode = ApiService.new.grab_episode(params)
+    @episode_link = @episode[:urls][:ui]
   end
 end
