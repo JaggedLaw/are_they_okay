@@ -14,11 +14,20 @@
       <div class="row" >
       <div class="col-md-12">
 
+    <% shown_title = "first" %>
     <% @episodes.each do |episode| %>
       <ul id="row-<%="#{episode[0]}"%>">
-        Disorder: &nbsp<%=  episode[0]%>-- Episode <%=  episode[1]%>: &nbsp<b><h4 style="display:inline-block"><%= episode[2] %></h4></b> &nbsp&nbsp(from show  <b><%= episode[3] %></b>)
-        <%= link_to "listen to podcast", episode[5], class: "btn btn-info btn-sm btn-block" %>
-        <%= button_to "download podcast", episode[4], class: "btn btn-info btn-sm btn-block" %> -->
+
+        <% if episode[0] != shown_title%>
+          <h2><%= episode[0] %></h2>
+          <% shown_title = episode[0] %>
+        <% end %>
+
+        <h4 style="display:inline-block"><%= episode[2] %></h4></b> &nbsp&nbsp(from show  <b><%= episode[3] %></b>)
+        <div class="inline-button", float="right">
+          <%= link_to "listen to podcast", episode[5], target: "blank", class: "btn btn-info btn-sm" %>
+          <%= link_to "link to mp3", episode[4], target: "blank", class: "btn btn-info btn-sm" %>
+        </div>
       </ul>
     <% end %>
 
