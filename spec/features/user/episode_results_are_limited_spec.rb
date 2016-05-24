@@ -98,7 +98,7 @@ RSpec.feature "EpisodeResultsAreLimited", type: :feature do
 
     click_on "Related Podcasts"
 
-    expect(page).to have_button("listen to podcast")
+    expect(page).to have_link("listen to podcast")
     expect(page).to have_button("download podcast")
 
   end
