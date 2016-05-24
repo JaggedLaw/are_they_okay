@@ -38,7 +38,7 @@ RSpec.feature "GuestCanCreateAccount", type: :feature do
       click_on "View Results"
     end
     expect(current_path).to eq results_path
-    save_and_open_page
+
     expect(page).not_to have_content "Score"
 
   end
