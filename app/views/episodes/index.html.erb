@@ -17,6 +17,9 @@
     <% @episodes.each do |episode| %>
       <ul id="row-<%="#{episode[0]}"%>">
         Disorder: &nbsp<%=  episode[0]%>-- Episode <%=  episode[1]%>: &nbsp<b><h4 style="display:inline-block"><%= episode[2] %></h4></b> &nbsp&nbsp(from show  <b><%= episode[3] %></b>)
+        <%= link_to "listen to podcast", episode_path(episode[1]), class: "btn btn-info btn-sm btn-block" %>
+        <!-- <%= button_to "listen to podcast", episode[5], class: "btn btn-info btn-sm btn-block" %>
+        <%= button_to "download podcast", episode[4], class: "btn btn-info btn-sm btn-block" %> -->
       </ul>
     <% end %>
 

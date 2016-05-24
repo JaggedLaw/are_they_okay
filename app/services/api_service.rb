@@ -14,12 +14,9 @@ class ApiService
     )
   end
 
-  def grab_show(params)
-    client.get_show(params[:id])
-  end
-
-  def self.grab_show(params)
-    new.grab_show(params)
+  def grab_episode(params)
+    resp = client.get_episode(params[:id])
+    binding.pry
   end
 
   def print_related_episodes(params)
@@ -42,7 +39,7 @@ class ApiService
         raise "There was a problem searching: #{res.status} #{res}"
       end
       res.results.first(8).each do |episode|
-        episode_results << [disorder_name, episode.id, episode.title, episode.show_title]
+        episode_results << [disorder_name, episode.id, episode.title, episode.show_title, episode[:digital_location], episode[:urls][:ui]]
       end
     end
     return episode_results

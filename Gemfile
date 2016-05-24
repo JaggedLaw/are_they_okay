@@ -20,6 +20,7 @@ gem 'faraday_middleware'
 gem 'excon'
 gem 'responders'
 gem 'oauth2'
+gem 'audiosearch'
 
 group :development, :test do
   gem 'byebug'

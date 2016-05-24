@@ -40,7 +40,7 @@ class Permission
       return true if controller == 'home' && action.in?(%w(index))
       return true if controller == 'sessions' && action.in?(%w(destroy))
       return true if controller == 'answers' && action.in?(%w(create new))
-      return true if controller == 'episodes' && action.in?(%w(index))
+      return true if controller == 'episodes' && action.in?(%w(index show))
     end
 
     def general_permissions
