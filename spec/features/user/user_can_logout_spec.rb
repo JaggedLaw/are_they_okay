@@ -23,7 +23,7 @@ RSpec.feature "GuestCanCreateAccount", type: :feature do
     ques1 = create(:question)
     ques2 = create(:question)
     visit root_path
-    click_on "Survey"
+    visit survey_path(ques1.id)
     choose 'answer_answer_yes'
     click_on 'Submit'
     expect(user.answers.last.question.question).to eq ques1.question

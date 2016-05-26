@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if user
       session[:user_id] = user.id
       if params[:survey_flag]
-        redirect_to survey_path(1)
+        redirect_to survey_path($start_question)
       else
         redirect_to root_path
       end

@@ -1,14 +1,17 @@
 <div class="container">
   <ul class="nav nav-tabs">
     <li><%= link_to "Home", root_path %></li>
-    <!-- <li><%= link_to "Login", "#myModal", class: "", "data-toggle" => "modal"  %> </li> -->
     <li>
       <a class="" data-toggle="modal" data-target="#myModal" data-backdrop="false">
         Login
       </a>
     </li>
-    <!-- <li><%= link_to "Login", tumblr_login_path %></li> -->
-    <li><%= link_to "Survey", survey_path(Question.first.id) %></li>
+
+    <% if current_user %>
+      <li><%= link_to "Survey", survey_path($start_question) %></li>
+    <% else %>
+      <li> <%= link_to "Survey", "#myModal", "data-toggle" => "modal" , "data-backdrop" => "false" %> </li>
+    <% end %>
     <li><%= link_to "Logout", logout_path, method: :delete %></li>
     <li id="nav-results"><%= link_to "View Results", results_path %></li>
 

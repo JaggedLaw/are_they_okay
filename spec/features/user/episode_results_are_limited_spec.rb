@@ -24,17 +24,15 @@ RSpec.feature "EpisodeResultsAreLimited", type: :feature do
     visit root_path
 
     # answer yes for one disorder
-    click_on "Survey"
-    first_quest = Question.first
-    expect(current_path).to eq survey_path(question1.id)
+    visit survey_path(question1.id)
     choose 'answer_answer_yes'
     click_on "Submit"
 
-    expect(current_path).to eq survey_path(question2.id)
+    visit survey_path(question2.id)
     choose 'answer_answer_yes'
     click_on "Submit"
 
-    expect(current_path).to eq survey_path(question3.id)
+    visit survey_path(question3.id)
     choose 'answer_answer_yes'
     click_on "Submit"
 
@@ -81,16 +79,15 @@ RSpec.feature "EpisodeResultsAreLimited", type: :feature do
 
     # answer yes for one disorder
     click_on "Survey"
-    first_quest = Question.first
-    expect(current_path).to eq survey_path(question1.id)
+    visit survey_path(question1.id)
     choose 'answer_answer_yes'
     click_on "Submit"
 
-    expect(current_path).to eq survey_path(question2.id)
+    visit survey_path(question2.id)
     choose 'answer_answer_yes'
     click_on "Submit"
 
-    expect(current_path).to eq survey_path(question3.id)
+    visit survey_path(question3.id)
     choose 'answer_answer_yes'
     click_on "Submit"
 

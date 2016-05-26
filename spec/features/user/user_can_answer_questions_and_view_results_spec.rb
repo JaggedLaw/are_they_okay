@@ -26,19 +26,19 @@ RSpec.feature "GuestCanCreateAccount", type: :feature do
 
     visit root_path
 
-    click_on "Survey"
+    visit survey_path(question1.id)
     choose 'answer_answer_yes'
     click_on 'Submit'
     expect(Answer.first.answer).to eq "Yes"
-    expect(current_path).to eq survey_path(question2.id)
+    expect(current_path).to eq survey_path(question1.id + 1)
     choose 'answer_answer_yes'
     click_on 'Submit'
     expect(Answer.last.answer).to eq "Yes"
-    expect(current_path).to eq survey_path(question3.id)
+    expect(current_path).to eq survey_path(question2.id + 1)
     choose 'answer_answer_yes'
     click_on 'Submit'
     expect(Answer.last.answer).to eq "Yes"
-    expect(current_path).to eq survey_path(question4.id)
+    expect(current_path).to eq survey_path(question3.id + 1)
     within("#results") do
       click_on 'View Results'
     end

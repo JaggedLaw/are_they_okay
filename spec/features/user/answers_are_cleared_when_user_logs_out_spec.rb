@@ -15,8 +15,6 @@ RSpec.feature "GuestCanCreateAccount", type: :feature do
     visit root_path
 
     click_on "Survey"
-    first_quest = Question.first
-    expect(current_path).to eq survey_path(first_quest.id)
     choose 'answer_answer_yes'
     click_on "Submit"
     expect(user.answers.count).to eq 1
