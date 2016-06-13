@@ -2,9 +2,13 @@
   <ul class="nav nav-tabs">
     <li><%= link_to "Home", root_path %></li>
     <li>
-      <a class="" data-toggle="modal" data-target="#myModal" data-backdrop="false">
-        Login
-      </a>
+      <% if current_user %>
+        <%= link_to "Logout", logout_path, method: :delete %>
+      <% else %>
+        <a class="" data-toggle="modal" data-target="#myModal" data-backdrop="false">
+          Login
+        </a>
+      <% end %>
     </li>
 
     <% if current_user %>
@@ -12,7 +16,6 @@
     <% else %>
       <li> <%= link_to "Survey", "#myModal", "data-toggle" => "modal" , "data-backdrop" => "false" %> </li>
     <% end %>
-    <li><%= link_to "Logout", logout_path, method: :delete %></li>
     <li id="nav-results"><%= link_to "View Results", results_path %></li>
 
   </ul>
