@@ -10,10 +10,17 @@
         Would you like to sign in through your Tumblr account or continue as a guest?
       </h3>
     </div>
-    <div class="modal-footer" id="modal-continue">
-      <%= button_to "Login with Tumblr", tumblr_login_path, class: "btn btn-default" %>
-      <%= button_to "Continue as Guest", {:controller => "sessions", :action => "create", :survey_flag => true}, class: "btn btn-default" %>
+    <div class="row">
+        <div class="modal-footer" id="modal-continue">
+          <div class="col-md-6 text-left">
+            <%= button_to "Login with Tumblr", tumblr_login_path, class: "btn btn-default no" %>
+          </div>
+          <div class="col-md-6 text-right">
+            <%= button_to "Continue as Guest", {:controller => "sessions", :action => "create", :survey_flag => true}, class: "btn btn-default idk" %>
+          </div>
+        </div>
     </div>
+  </div>
 
   </div>
 </div>

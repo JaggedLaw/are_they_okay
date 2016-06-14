@@ -1,7 +1,12 @@
 class EpisodesController < ApplicationController
 
   def index
-    @episodes = ApiService.new.grab_related_episodes(params)
+    if params[:illnesses]
+      @episodes = ApiService.new.grab_related_episodes(params)
+    else
+      flash["alert-info"] = "You don't have any results to search!"
+      redirect_to results_path
+    end
   end
 
   def related_episodes
