@@ -1,10 +1,9 @@
 == Are They Okay
-{Go To App}[https://aretheyokay.herokuapp.com]
 
 This is a Mental Health App. If a user is concerned that someone they care about is suffering from mental illness this survey will guide them to possible disorders. Results page provides resources for help and additional materials 
  * Cool feature: Requests to the audiosear.ch api provides user with related podcasts for diagnoses
  * Tech Stack: OAuth, Extensive ActiveRecord data queries, external API requests/consumption, JavaScript modal windows
  
- Online heroku app can be reached here:
- {Go To App}[https://aretheyokay.herokuapp.com]
+Online heroku app can be reached here:
+{Go To App}[https://aretheyokay.herokuapp.com]
 
