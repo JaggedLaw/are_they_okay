@@ -1,28 +1,9 @@
-== README
+== Are They Okay
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Mental Health App. If a user is concerned that someone they care about is suffering from mental illness this survey will guide them to possible disorders. Results page provides resources for help and additional materials 
+ * Cool feature: Requests to the audiosear.ch api provides user with related podcasts for diagnoses
+ * Tech Stack: OAuth, Extensive ActiveRecord data queries, external API requests/consumption, JavaScript modal windows
+ 
+ Online heroku app can be reached here:
+ {Go to app}[http://https://aretheyokay.herokuapp.com]
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
