@@ -5,5 +5,5 @@ This is a Mental Health App. If a user is concerned that someone they care about
  * Tech Stack: OAuth, Extensive ActiveRecord data queries, external API requests/consumption, JavaScript modal windows
  
  Online heroku app can be reached here:
- {Go to app}[http://https://aretheyokay.herokuapp.com]
+ Go to app[https://aretheyokay.herokuapp.com]
 
